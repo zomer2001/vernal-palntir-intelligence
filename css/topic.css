@@ -63,3 +63,4 @@
 .topic-gap-audit-layout__side .topic-gap-radar{width:100%;max-width:640px;margin:0}
 .topic-gap-audit-layout__side .topic-gap-radar__svg{min-height:0;max-height:460px}
 @media(max-width:1050px){.topic-gap-audit-layout{grid-template-columns:1fr}}
+.brand__mark{object-fit:unset;border-radius:0;background:transparent;padding:0}
