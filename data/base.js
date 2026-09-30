@@ -1,0 +1,137 @@
+/* 研究展示数据。证据编号对应上级目录的两份专项调研；链接仅在用户点击时访问。 */
+window.RESEARCH_DATA = {
+  sources: {
+    G1: {title:"Palantir 2025 财年 Form 10-K", type:"公司披露", url:"https://www.sec.gov/Archives/edgar/data/1321655/000132165526000011/pltr-20251231.htm"},
+    G2: {title:"Gotham API 文档", type:"官方开发文档", url:"https://www.palantir.com/docs/gotham/api"},
+    G3: {title:"Object Resolution 基础", type:"官方开发文档", url:"https://www.palantir.com/docs/gotham/api/revdb-resources/resolution/resolution-basics"},
+    G4: {title:"Federated Sources", type:"官方开发文档", url:"https://www.palantir.com/docs/gotham/api/revdb-resources/federated-sources"},
+    G5: {title:"Gaia Map API", type:"官方开发文档", url:"https://www.palantir.com/docs/gotham/api/map-resources/maps/load-map"},
+    G6: {title:"Defense OSDK API", type:"官方开发文档", url:"https://www.palantir.com/docs/defense-osdk/api"},
+    G7: {title:"Foundry–Gotham 集成", type:"官方开发文档", url:"https://www.palantir.com/docs/foundry/object-link-types/enable-gotham-integration"},
+    G8: {title:"Gotham AI-enabled Operations 白皮书", type:"厂商资料", url:"https://www.palantir.com/assets/xrfr7uokpv1b/3A0y10xksgXENvRMNaAsUu/ed8f7f1ed534c0101f64536a85f7297b/Gotham_AI-Enabled_Operations_White_Paper.pdf"},
+    G16: {title:"Target Workbench 产品资料", type:"厂商资料", url:"https://www.palantir.com/assets/xrfr7uokpv1b/1IqzwzpemtBSm98TNCczao/49bbc30cbec4d2d4d189ab27bd07376c/Palantir_Target_Workbench___1_.pdf"},
+    M7: {title:"美国陆军 BAS-T 案例", type:"军方一手材料", url:"https://www.lineofdeparture.army.mil/Journals/Field-Artillery/FA-2024-Issue-1/Airborne-Employment/"},
+    M12: {title:"NATO NCIA 采购 MSS", type:"NATO 一手材料", url:"https://www.ncia.nato.int/newsroom/news/nato-acquires-aienabled-warfighting-system"},
+    M18: {title:"CDAO 官方网站 MSS 描述", type:"政府一手材料", url:"https://www.ai.mil/"},
+    M19: {title:"CDAO 前沿模型合作公告", type:"政府一手材料", url:"https://www.ai.mil/News/PR-View/Article/4242822/cdao-announces-partnerships-with-frontier-ai-companies-to-address-national-secu/"},
+    M24: {title:"Maven Smart System 产品单页", type:"厂商资料", url:"https://assets.ctfassets.net/xrfr7uokpv1b/25muZs93DY5XOUBtuh68yn/b40d9784f69917219f972890ceede986/Maven_One_Pager.pdf"},
+    M27: {title:"美国海军陆战队 MSS 许可公告", type:"军方一手材料", url:"https://www.marines.mil/News/Messages/Messages-Display/Article/4299351/announcement-of-maven-smart-system-licensing-for-marine-corps/"},
+    M28: {title:"CDAO Open DAGIR 采购路径", type:"政府一手材料", url:"https://www.ai.mil/Portals/137/Documents/Resources%20Page/2025-01-Open-DAGIR-Overview.pdf?ver=UwgZcW-VUj0wqeHuXbPosQ%3D%3D"},
+    M33: {title:"美国海军陆战队 ODIN 公告", type:"军方一手材料", url:"https://www.marines.mil/News/Messages/Messages-Display/Article/4521548/announcement-of-the-operational-data-integration-nexus-odin-as-the-authoritativ/"},
+    M37: {title:"美国陆军 V Corps Maven 使用经验", type:"军方一手材料", url:"https://www.army.mil/article-amp/291641/the_brain_of_the_battlefield_ai_integration_in_v_corps"},
+    M43: {title:"美国陆军 ISA/TACDS 接入案例", type:"军方一手材料", url:"https://cpeisw.army.mil/2025/07/10/integrated-sensor-architecture-fires-things-up-at-scarlet-dragon-experimentation/"},
+    M44: {title:"美国陆军 AMPS 桥接案例", type:"军方一手材料", url:"https://www.army.mil/article/286151/tf_cardinal_innovates_with_maven"},
+    M47: {title:"NATO MSS 达到 FTOC", type:"NATO 一手材料", url:"https://www.jwc.nato.int/article/maven-achieves-ftoc/"},
+    M55: {title:"CDAO Open DAGIR 接入进展", type:"政府一手材料", url:"https://www.ai.mil/News/PR-View/Article/4026085/cdao-highlights-progress-in-scaling-data-and-ai-capabilities-at-six-month-mark/"},
+    M66: {title:"美国海军陆战队 Dynamis Serial 005", type:"军方一手材料", url:"https://www.29palms.marines.mil/Articles/Article/4445978/closing-the-sensor-to-shooter-gap-one-dynamis-serial-at-a-time/"},
+    M77: {title:"美国陆军 Gray Space 2025", type:"军方一手材料", url:"https://api.army.mil/e2/c/downloads/2025/10/01/db3edbe3/gray-space-fall-2025.pdf"}
+  },
+  gotham: {
+    name:"Gotham", fullName:"Palantir Gotham", kicker:"任务型数据与运营平台", accent:"#2563eb",
+    thesis:"把多源数据组织为可追溯的对象、关系与时空态势，再接入受权限约束的研判和任务流程。",
+    boundary:"本页只把有 Gotham 专属证据的能力归入 Gotham。Foundry、Apollo、AIP 是协同平台，客户项目是采用证据；公开资料不足以揭示内部代码、部署拓扑或真实性能。",
+    chain:["多源接入与来源","统一对象与解析","关系 / 地时态势","研判与任务流程","权限、审计与评估"],
+    products:[
+      {id:"revdb",name:"RevDB / 动态对象层",group:"任务数据基础",kind:"公开 API 能力",summary:"以对象、属性和关系组织任务数据；动态本体由 Gotham API 文档直接描述。",status:"已核验",sources:["G2"],unknown:"内部存储和完整客户本体未公开。"},
+      {id:"federated",name:"Federated Sources",group:"任务数据基础",kind:"公开 API 能力",summary:"访问外部数据源并保留联邦边界；外部对象不能等同于可写的原生对象。",status:"已核验",sources:["G4"],unknown:"连接器清单、缓存与故障策略未公开。"},
+      {id:"resolution",name:"Object Resolution",group:"任务数据基础",kind:"公开 API 能力",summary:"将多条记录解析到同一现实对象，保留独立历史，并可取消解析。",status:"已核验",sources:["G3"],unknown:"匹配算法、阈值与人工审核规则未公开。"},
+      {id:"provenance",name:"来源、标记与权限",group:"任务数据基础",kind:"治理能力",summary:"Foundry–Gotham 集成公开了对象类型和安全标记传递关系。",status:"部分核验",sources:["G7"],unknown:"各客户部署中的细粒度策略和审计效果未公开。"},
+      {id:"objects",name:"Object / Entity / Event",group:"分析与态势",kind:"对象分析",summary:"围绕实体、事件、文档和关系开展检索与分析。",status:"已核验",sources:["G2"],unknown:"具体领域对象字段与规模未公开。"},
+      {id:"graph",name:"Graph 关系分析",group:"分析与态势",kind:"分析能力",summary:"使用对象与关系资源发现关联链和上下文。",status:"部分核验",sources:["G2"],unknown:"内部图引擎与算法未公开。"},
+      {id:"gaia",name:"Gaia Maps",group:"分析与态势",kind:"地图应用",summary:"地图、图层与空间对象的访问和展示。",status:"已核验",sources:["G5"],unknown:"具体地图配置与实时吞吐未公开。"},
+      {id:"tracks",name:"Tracks / Observations",group:"分析与态势",kind:"时空能力",summary:"公开 API 目录中的轨迹与观测资源，支撑动态时空分析。",status:"已核验",sources:["G2"],unknown:"传感器格式、精度和流处理性能未公开。"},
+      {id:"cop",name:"Common Operating Picture",group:"分析与态势",kind:"态势能力",summary:"白皮书描述历史数据和流式传感器汇聚的共同态势。",status:"厂商主张",sources:["G8"],unknown:"独立效果和部署配置待验证。"},
+      {id:"intelligence",name:"Intelligence 工作流",group:"任务与领域应用",kind:"业务流程",summary:"围绕情报对象、证据、来源和研判结果形成工作流。",status:"部分核验",sources:["G2","G6"],unknown:"客户流程和审批规则未公开。"},
+      {id:"target-workbench",name:"Target Workbench",group:"任务与领域应用",kind:"命名应用",summary:"厂商资料描述其覆盖识别、协作、执行与评估的目标生命周期。",status:"厂商主张",sources:["G16"],unknown:"具体客户部署中的功能和效果未独立评估。"},
+      {id:"mission",name:"Mission Planning",group:"任务与领域应用",kind:"领域能力",summary:"Defense OSDK 提供任务规划领域接口；白皮书描述计划与评估方向。",status:"部分核验",sources:["G6","G8"],unknown:"不能推断所有 Gotham 部署均启用相同流程。"},
+      {id:"fires",name:"Targeting / Fires",group:"任务与领域应用",kind:"领域能力",summary:"Defense OSDK 公开目标与火力领域；是领域模型证据。",status:"部分核验",sources:["G6"],unknown:"具体授权链、客户配置和执行接口未公开。"},
+      {id:"api",name:"Gotham API / Defense OSDK",group:"平台协同",kind:"开发接口",summary:"REST API 与防务 SDK 使对象、地图和任务领域能力可被应用调用。",status:"已核验",sources:["G2","G6"],unknown:"第三方生产部署的完整接口覆盖度未知。"},
+      {id:"aip",name:"AIP / AI-enabled Operations",group:"平台协同",kind:"相邻平台能力",summary:"AI 辅助查询、计划和复盘是公开描述的集成方向。",status:"厂商主张",sources:["G1","G8"],unknown:"AIP 是独立平台，不能把全部通用能力直接计入 Gotham。"}
+    ],
+    routes:[
+      {id:"R1",name:"统一对象与语义层",from:"分散数据表",to:"动态对象 / 关系 / 领域语义",evidence:"RevDB、对象 API、类型映射",sources:["G2","G7"],boundary:"内部本体语言与存储实现未知。"},
+      {id:"R2",name:"多源接入与对象解析",from:"批量导入与一次性去重",to:"联邦访问、来源保持、可撤销解析",evidence:"Federated Sources、Object Resolution",sources:["G3","G4"],boundary:"匹配模型和联邦性能未知。"},
+      {id:"R3",name:"地理、时间与共同态势",from:"孤立地图与报表",to:"对象、观测、轨迹和地图联动",evidence:"Gaia、Tracks / Observations、白皮书",sources:["G2","G5","G8"],boundary:"实时性能和传感器适配未知。"},
+      {id:"R4",name:"研判到任务的闭环",from:"只看数据",to:"计划、授权、执行记录和复盘",evidence:"Target Workbench、Defense OSDK",sources:["G6","G16"],boundary:"客户流程与实际效果待核验。"},
+      {id:"R5",name:"治理、部署与 AI 协同",from:"中心化单一应用",to:"安全治理、API、跨环境和 AI 辅助",evidence:"Gotham API、10-K、AI 白皮书",sources:["G1","G2","G8"],boundary:"Apollo、AIP 的通用能力不可直接当作 Gotham 内部实现。"}
+    ],
+    gaps:[
+      {id:"G01",name:"统一对象语义",priority:"P0",fact:"RevDB、对象 API 与类型映射有公开证据。",open:"跨源语义治理、迁移和领域建模成本需验证。",metric:"类型覆盖率；schema 兼容率",sources:["G2","G7"]},
+      {id:"G02",name:"可撤销实体解析",priority:"P0",fact:"Object Resolution 明确保留历史且支持取消解析。",open:"误合并撤销后，下游关系是否一致需要验证。",metric:"误合并率；撤销一致性",sources:["G3"]},
+      {id:"G03",name:"联邦访问与来源",priority:"P0",fact:"外部联邦对象可访问，但不可作为原生对象直接更新。",open:"源故障、缓存、权限与来源链在组合方案中需要打通。",metric:"来源保留率；源故障降级",sources:["G4"]},
+      {id:"G04",name:"地时态势与轨迹",priority:"P0",fact:"Gaia、轨迹资源和共同态势方向已有资料。",open:"多传感器时间、坐标与冲突处理缺少可复核指标。",metric:"回放一致性；p95 更新延迟",sources:["G2","G5","G8"]},
+      {id:"G05",name:"研判到任务闭环",priority:"P0",fact:"目标工作台和防务领域接口支持任务方向。",open:"审批、状态机与执行结果回写要独立验证。",metric:"审批完整率；结果回写率",sources:["G6","G16"]},
+      {id:"G06",name:"权限、标记与审计",priority:"P0",fact:"集成文档公开了安全标记传递。",open:"跨系统授权继承和部署级审计效果未公开。",metric:"越权读取率；审计完整率",sources:["G7"]},
+      {id:"G07",name:"跨环境与断连运行",priority:"P0",fact:"公司资料描述多环境交付方向。",open:"真实节点拓扑和恢复指标未公开。",metric:"恢复时间；数据丢失率",sources:["G1"]},
+      {id:"G08",name:"开发者接口",priority:"P1",fact:"Gotham API 与 Defense OSDK 有公开文档。",open:"schema 版本、兼容性和生产级覆盖度需验证。",metric:"接口兼容率；接入工时",sources:["G2","G6"]},
+      {id:"G09",name:"AI 辅助治理",priority:"P0",fact:"白皮书描述 AI 辅助运营。",open:"证据引用、权限继承与人工批准效果待独立核验。",metric:"引用覆盖率；越权调用率",sources:["G8"]},
+      {id:"G10",name:"领域知识与交付",priority:"P0",fact:"政府场景和平台定位明确。",open:"领域模型、认证和持续交付不由单个开源组件提供。",metric:"新场景建模工时；交付周期",sources:["G1"]},
+      {id:"G11",name:"迁移与替换",priority:"P1",fact:"平台化接口带来集成收益。",open:"数据迁移、重新认证和人员培训成本需按具体部署估算。",metric:"导出完整率；迁移成本",sources:["G2"]},
+      {id:"G12",name:"用途与权利控制",priority:"P0",fact:"权限和标记有公开线索。",open:"用途限制、保留删除和独立审查应作为验证维度。",metric:"违规访问率；审计可解释率",sources:["G7"]}
+    ],
+    scenarios:[
+      {id:"S01",name:"多源对象与可撤销解析",flow:["合成记录","候选匹配","人工审核","合并 / 撤销","来源回溯"],measure:"precision、recall、误合并率、撤销后关系一致性",reference:"Splink + 自建审核状态机",sources:["G3"],boundary:"验证的是自建机制，不是 Gotham 算法。"},
+      {id:"S02",name:"联邦访问与来源保持",flow:["外部公开源","只读连接","统一视图","缓存 / 降级","来源链"],measure:"查询成功率、缓存过期率、来源保留率",reference:"Apache NiFi / 自建连接器",sources:["G4"],boundary:"不将一个公开 API 接入等同于 Gotham 联邦层。"},
+      {id:"S03",name:"合成轨迹与时空回放",flow:["合成观测","对象关联","地图 / 时间线","冲突提示","历史回放"],measure:"p95 延迟、坐标错误率、回放一致性",reference:"PostGIS + MapLibre",sources:["G2","G5"],boundary:"仅用合成或公开历史数据。"},
+      {id:"S04",name:"对象关系研判工作台",flow:["对象 / 文档","关系检索","证据引用","人工注释","结论版本"],measure:"结论可追溯率、权限过滤正确率",reference:"OpenSearch + 图存储候选",sources:["G2"],boundary:"开源项目仅是机制参照。"},
+      {id:"S05",name:"任务规划与人工审批",flow:["虚构救援任务","候选方案","约束检查","人工批准","复盘回写"],measure:"审批完整率、状态恢复率、结果回写率",reference:"Temporal + 自建审批模型",sources:["G6","G16"],boundary:"使用非攻击性合成任务。"},
+      {id:"S06",name:"权限约束的 AI 摘要",flow:["授权用户","有权检索","带引用摘要","人工复核","审计"],measure:"引用覆盖率、越权率、人工纠错率",reference:"OPA + OpenTelemetry",sources:["G7","G8"],boundary:"AI 只做检索、摘要与解释。"},
+      {id:"S07",name:"标记、用途与审计",flow:["身份 / 用途","对象标记","策略决策","允许 / 拒绝","审计复核"],measure:"越权读取率、审计完整率、撤销传播延迟",reference:"OPA + Keycloak",sources:["G7"],boundary:"不声称等同任何客户的安全认证。"},
+      {id:"S08",name:"断连与恢复",flow:["合成事件","断连注入","本地队列","恢复同步","冲突处理"],measure:"丢失率、重复率、恢复时间",reference:"NATS / Zenoh 候选",sources:["G1"],boundary:"仅为 Gotham-like 工程实验。"}
+    ]
+  },
+  maven: {
+    name:"Maven MSS", fullName:"Maven Smart System", kicker:"任务级 AI 与协同系统", accent:"#0e7490",
+    thesis:"围绕传感器数据、实时检测、共同态势、具名任务应用和人工审核组织任务工作流。",
+    boundary:"Project Maven 是政府项目背景，NGA Maven 是相邻政府能力；MSS NATO 是部署实例。通用 Palantir 能力不能自动写成 MSS 专属配置，视觉检测也不等于自动处置。",
+    chain:["传感器与任务数据","融合 / 实时图层","具名应用协同","人员审核确认","结果共享与治理"],
+    products:[
+      {id:"mss",name:"Maven Smart System",group:"核心平台",kind:"父平台",summary:"CDAO 描述其分析和融合传感器数据并支持实时物体检测。",status:"已核验",sources:["M18","M24"],unknown:"官方全量产品树与内部架构未公开。"},
+      {id:"gaia",name:"Gaia",group:"地理态势",kind:"命名应用",summary:"MSS 资料列举的地图、地理分析和协同规划应用。",status:"混合核验",sources:["M24","M27"],unknown:"MSS 实例中的图层和配置未知。"},
+      {id:"target-workbench",name:"Target Workbench",group:"目标协同",kind:"命名应用",summary:"目标信息组织、管理与协同应用；陆军案例中涉及人工核验。",status:"混合核验",sources:["M7","M24","M27"],unknown:"具体授权、排序和下游接口配置未知。"},
+      {id:"odin",name:"ODIN",group:"任务报告",kind:"命名应用",summary:"海军陆战队明确称其为 MSS 内的数字化作战报告应用。",status:"已核验",sources:["M33"],unknown:"限海军陆战队公开场景，内部模型未知。"},
+      {id:"maverick",name:"Maverick",group:"目标协同",kind:"命名应用",summary:"被 MSS 产品资料及海军陆战队清单点名。",status:"名称已核验",sources:["M24","M27"],unknown:"独立功能、版本与接口资料不足。"},
+      {id:"target-nexus",name:"Target Nexus",group:"目标协同",kind:"命名应用",summary:"MSS 产品单页列于集中目标管理能力组。",status:"名称已核验",sources:["M24"],unknown:"缺少独立产品级详情。"},
+      {id:"logx",name:"LogX",group:"任务报告",kind:"命名应用",summary:"海军陆战队 MSS 许可公告列出的软件对象。",status:"名称已核验",sources:["M27"],unknown:"具体用途和接口未公开。"},
+      {id:"foundry",name:"Foundry",group:"数据平台",kind:"关联平台",summary:"海军陆战队将其列入 MSS Data Platform 公开清单。",status:"关系已核验",sources:["M27"],unknown:"Foundry 通用能力不等于 MSS 全部已启用。"},
+      {id:"bas-t",name:"BAS-T",group:"视觉与告警",kind:"应用 / 能力系统",summary:"陆军案例表明视觉检测结果进入 MSS 实时图层。",status:"案例已核验",sources:["M7","M24"],unknown:"模型、准确率和通用性能未公开。"},
+      {id:"ai-tasking",name:"AI Tasking Manager",group:"视觉与告警",kind:"命名工具",summary:"MSS 单页列入自动检测任务化链路。",status:"名称已核验",sources:["M24"],unknown:"独立功能与部署状态未公开。"},
+      {id:"chipout",name:"BAS Chipout Tool",group:"视觉与告警",kind:"命名工具",summary:"MSS 单页列入检测结果交付链路。",status:"名称已核验",sources:["M24"],unknown:"输出格式和接口未公开。"},
+      {id:"pattern",name:"Pattern Analyzer",group:"视觉与告警",kind:"命名工具",summary:"MSS 单页列入模式分析和智能告警。",status:"名称已核验",sources:["M24"],unknown:"算法与性能未公开。"},
+      {id:"model-catalog",name:"Model Catalog",group:"模型与生成式 AI",kind:"关联应用",summary:"MSS 单页列出的模型发现与比较应用。",status:"关系已核验",sources:["M24"],unknown:"MSS 中实际模型及其版本未知。"},
+      {id:"aip-assist",name:"AIP Assist",group:"模型与生成式 AI",kind:"关联应用",summary:"MSS 单页列出的辅助应用。",status:"关系已核验",sources:["M24"],unknown:"MSS 专属内容源和使用情况未知。"},
+      {id:"aip-threads",name:"AIP Threads",group:"模型与生成式 AI",kind:"关联应用",summary:"MSS 单页列出的文档与对话辅助应用。",status:"关系已核验",sources:["M24"],unknown:"具体权限、模型和数据范围未知。"},
+      {id:"agent-studio",name:"Agent Studio / AIP Chatbot Studio",group:"模型与生成式 AI",kind:"关联应用",summary:"MSS 单页使用 Agent Studio 名称；后续官方文档已更名。",status:"关系已核验",sources:["M24"],unknown:"不证明任何自主 Agent 已投入 MSS 任务。"},
+      {id:"workshop",name:"Workshop",group:"自助构建",kind:"关联工具",summary:"MSS 单页和陆军材料均点名的应用构建工具。",status:"关系已核验",sources:["M24","M37"],unknown:"具体模板和客户配置未公开。"},
+      {id:"slate",name:"Slate",group:"自助构建",kind:"关联工具",summary:"MSS 单页列出的可定制应用构建工具。",status:"关系已核验",sources:["M24"],unknown:"MSS 专属应用清单未知。"},
+      {id:"kairos",name:"Kairos",group:"补充应用",kind:"命名应用",summary:"V Corps 材料将其列为 Maven 补充应用。",status:"名称已核验",sources:["M37"],unknown:"功能详情和 MSS 归属边界仍需补证。"}
+    ],
+    routes:[
+      {id:"T1",name:"传感器数据与对象化",from:"影像 / 异构数据",to:"多源融合、对象与数据资源",evidence:"CDAO 描述、V Corps 的 datasets / objects / pipelines",sources:["M18","M37"],boundary:"具体数据模型和管道实现未知。"},
+      {id:"T2",name:"视觉检测与任务化",from:"Project Maven 的算法问题背景",to:"检测结果进入 MSS 实时图层",evidence:"BAS-T 陆军公开案例",sources:["M7"],boundary:"Project Maven 不等于 Palantir MSS 的上一代产品。"},
+      {id:"T3",name:"共同态势与人工协同",from:"分散态势与人工转录",to:"Gaia / Target Workbench / ODIN 等应用协同",evidence:"MSS 产品单页、军种许可、ODIN 公告",sources:["M24","M27","M33"],boundary:"跨实例启用情况未知。"},
+      {id:"T4",name:"接口、第三方与跨域",from:"封闭或人工桥接",to:"Open DAGIR 接入路径与实例化适配",evidence:"CDAO 路径；ISA/TACDS 成功案例；AMPS 桥接",sources:["M28","M43","M44","M55"],boundary:"一处接入成功不能外推所有网络和单位。"},
+      {id:"T5",name:"模型、联盟与受限环境",from:"单点模型应用",to:"模型接入、NATO 实例和受限网络任务",evidence:"CDAO 模型公告、NATO 采购 / FTOC、Dynamis",sources:["M12","M19","M47","M66"],boundary:"具体模型、策略和断连性能未公开。"}
+    ],
+    techObjects:["MSS 核心平台","数据融合与管理","Gaia","Target Workbench","ODIN","视觉检测与任务化","模型与生成式 AI","人员审核工作流","数据资源与管道","接口与跨域适配","第三方接入生态","部署、安全与治理"],
+    gaps:[
+      {id:"GAP-01",name:"视觉识别与人工确认",priority:"高",fact:"实时检测与 BAS-T 结果进入图层、人员核验有案例。",open:"类别、精度、阈值和端到端时延未公开。",metric:"检测至确认时长；误报 / 漏报；审计完整率",sources:["M7","M18"]},
+      {id:"GAP-02",name:"模型可验证性",priority:"高",fact:"MSS 的检测和模型接入方向有公开资料。",open:"MSS 专属模型、数据集、评测和回滚机制未知。",metric:"评测可重复性；漂移；回滚成功率",sources:["M18","M19"]},
+      {id:"GAP-03",name:"多源数据融合",priority:"最高",fact:"CDAO 确认传感器融合；陆军案例有跨域数据写入。",open:"时空对齐、血缘、冲突和质量规则未知。",metric:"新源接入周期；关联准确率；血缘覆盖率",sources:["M18","M43"]},
+      {id:"GAP-04",name:"受限网络与系统集成",priority:"高",fact:"既有 TACDS 接入，也有 AMPS 桥接及 EWPMT 人工转录案例。",open:"不同部署的接口成熟度和断连恢复能力不能互相外推。",metric:"恢复时间；人工转录错误率；接口覆盖率",sources:["M43","M44","M77"]},
+      {id:"GAP-05",name:"跨域与联盟治理",priority:"高",fact:"MSS NATO 已采购并获得 FTOC。",open:"身份、数据主权、跨域发布和审计规则未知。",metric:"策略命中率；越权阻断率；审计完整率",sources:["M12","M47"]},
+      {id:"GAP-06",name:"生成式 AI 治理",priority:"高",fact:"CDAO 和 NCIA 表述模型 / LLM 可接入 MSS 语境。",open:"具体 Agent、提示链、权限与人工复核配置未知。",metric:"引用覆盖率；越权率；人工纠错率",sources:["M12","M19"]},
+      {id:"GAP-07",name:"规模与任务效果",priority:"中",fact:"采购、许可和局部使用案例存在。",open:"合同金额和局部用户数不能代表通用性能或效果。",metric:"活跃节点 / 任务量；可用性；任务周期",sources:["M27"]},
+      {id:"GAP-08",name:"开放性与迁移",priority:"高",fact:"Open DAGIR 建立第三方接入政府拥有 MSS 数据环境的路径。",open:"MSS 专属 API、数据导出权与替换成本未知。",metric:"接入成功率；导出完整率；迁移时间",sources:["M28","M55"]},
+      {id:"GAP-09",name:"人员训练与流程嵌入",priority:"高",fact:"军种培训与 V Corps 使用经验均显示岗位训练重要。",open:"熟练度、错误率和长期采用率未公开。",metric:"达标时间；任务正确率；流程绕行率",sources:["M27","M37"]}
+    ],
+    scenarios:[
+      {id:"RS-01",name:"视觉结果与人工核验",flow:["合成检测结果","实时图层","人工复核","状态记录","回溯"],measure:"确认时延、误报 / 漏报、审计完整率",reference:"MLflow + Temporal",sources:["M7"],boundary:"公开案例证明工作流，不证明模型性能。"},
+      {id:"RS-02",name:"多源数据与共同态势",flow:["合成多源数据","接入 / 规范化","时空关联","共同视图","冲突复核"],measure:"关联准确率、血缘覆盖率、端到端延迟",reference:"NiFi + STAC + PostGIS",sources:["M18","M43"],boundary:"外部组件仅是隔离验证参照。"},
+      {id:"RS-03",name:"异构接口适配",flow:["外部数据","字段映射","桥接 / 导入","异常隔离","输出追踪"],measure:"映射成功率、人工转录错误率、修复时间",reference:"NiFi + Schema 校验",sources:["M44","M55","M77"],boundary:"不假定 MSS 存在通用开放核心 API。"},
+      {id:"RS-04",name:"联盟和受控共享",flow:["身份 / 数据域","共享申请","允许 / 拒绝","审计记录","复核"],measure:"越权阻断率、审计完整率、策略误拒率",reference:"OPA + OpenTelemetry",sources:["M12","M47"],boundary:"不复原 NATO 内部策略或密级配置。"},
+      {id:"RS-05",name:"模型 / LLM 辅助",flow:["模型登记","合成任务数据","带引用输出","人工复核","版本回滚"],measure:"事实正确率、引用覆盖率、越权率",reference:"MLflow + OPA",sources:["M19","M24"],boundary:"模型可接入不等于特定 Agent 已在生产运行。"},
+      {id:"RS-06",name:"受限通信与恢复",flow:["合成事件","弱网 / 断连","本地待发","恢复同步","人工处理冲突"],measure:"断连可用时长、恢复时间、丢失 / 冲突率",reference:"Zenoh + OpenTelemetry",sources:["M66"],boundary:"单次演示不构成 MSS 通用性能指标。"}
+    ]
+  }
+};

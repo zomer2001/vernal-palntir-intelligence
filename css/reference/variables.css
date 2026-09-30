@@ -1,0 +1,21 @@
+:root {
+  --nav-dark: #14283d;
+  --primary: #2563eb;
+  --running: #0e7490;
+  --success: #15803d;
+  --warning: #b45309;
+  --danger: #d32f2f;
+  --text-primary: #1f2937;
+  --text-secondary: #64728b;
+  --page-background: #f5f7fa;
+  --card-background: #ffffff;
+  --border: #e2e8f0;
+  --sidebar-width: 228px;
+  --topbar-height: 62px;
+  --content-gutter: 24px;
+  --radius-card: 10px;
+  --radius-control: 6px;
+  --shadow-panel: 0 8px 24px rgba(20, 40, 61, 0.08);
+  --shadow-drawer: -18px 0 34px rgba(0, 0, 0, 0.22);
+  --font-ui: "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", system-ui, sans-serif;
+}
